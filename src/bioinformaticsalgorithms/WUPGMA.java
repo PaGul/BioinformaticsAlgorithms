@@ -44,6 +44,7 @@ public class WUPGMA {
             heightsOfNodes.put(letter, 0.0);
             currNodes.add(new Node(letter));
         }
+        
         matrix.add(new Value("B", "A", 5));
         matrix.add(new Value("C", "A", 4));
         matrix.add(new Value("D", "A", 7));
