@@ -14,8 +14,10 @@ public class BioinformaticsAlgorithms {
 
     public static void main(String[] args) {
         WUPGMA w = new WUPGMA();
-        w.runUPGMA();
+        System.out.println("WPGMA");
         w.runWPGMA();
+        System.out.println("UPGMA");
+        w.runUPGMA();
     }
     
 }

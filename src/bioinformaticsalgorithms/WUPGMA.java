@@ -51,7 +51,7 @@ public class WUPGMA {
 //        matrix.add(new Value("L", "M", 8));
 //        matrix.add(new Value("L", "N", 8));
 //        matrix.add(new Value("M", "N", 4));
-        matrix.add(new Value("B", "A", 5));
+        matrix.add(new Value("B", "A", 4));
         matrix.add(new Value("C", "A", 4));
         matrix.add(new Value("D", "A", 7));
         matrix.add(new Value("E", "A", 6));
