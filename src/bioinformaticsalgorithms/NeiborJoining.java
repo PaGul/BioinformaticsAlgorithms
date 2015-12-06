@@ -134,7 +134,8 @@ public class NeiborJoining {
         }
         Entry<Node, HashMap<Node, Double>> lastVal = matrix.entrySet().iterator().next();
         Entry<Node, Double> lastVal2 = lastVal.getValue().entrySet().iterator().next();
-        lastVal2.getKey().height = lastVal2.getValue();
+        lastVal2.getKey().height = lastVal2.getValue()/2;
+        lastVal.getKey().height = lastVal2.getValue()/2;
         Node root = new Node(lastVal.getKey(), lastVal2.getKey(), 0);
         tree.add(root);
         System.out.println(inOrderNewick(root));
