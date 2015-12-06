@@ -13,11 +13,8 @@ package bioinformaticsalgorithms;
 public class BioinformaticsAlgorithms {
 
     public static void main(String[] args) {
-        WUPGMA w = new WUPGMA();
-        System.out.println("WPGMA");
-        w.runWPGMA();
-        System.out.println("UPGMA");
-        w.runUPGMA();
+        NeiborJoining nj = new NeiborJoining();
+        nj.run();
     }
     
 }
