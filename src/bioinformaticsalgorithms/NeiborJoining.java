@@ -24,7 +24,7 @@ public class NeiborJoining {
     public void run() {
 //        LinkedList<Val> matrix = new LinkedList<>();
 
-        Set<Node> letters = new HashSet<Node>(Arrays.asList(new Node[]{new Node("A"), new Node("B"), new Node("C"), new Node("D"), new Node("E")}));
+        Set<Node> letters = new HashSet<Node>(Arrays.asList(new Node[]{new Node("A"), new Node("B"), new Node("C"), new Node("D"), new Node("E"), new Node("F")}));
         HashMap<Node, Double> heightsOfNodes = new HashMap<>();
         LinkedList<Node> tree = new LinkedList<>();
         LinkedList<Node> currNodes = new LinkedList<>();
@@ -34,40 +34,84 @@ public class NeiborJoining {
         }
 
         HashMap<Node, HashMap<Node, Double>> matrix = new HashMap<>();
+//        HashMap<Node, Double> temp = new HashMap<>();
+//        temp.put(new Node("B"), 5.0);
+//        temp.put(new Node("C"), 5.0);
+//        temp.put(new Node("D"), 5.0);
+//        matrix.put(new Node("A"), temp);
+//
+//        temp = new HashMap<>();
+//        temp.put(new Node("A"), 5.0);
+//        temp.put(new Node("C"), 2.0);
+//        temp.put(new Node("D"), 2.0);
+//        matrix.put(new Node("B"), temp);
+//
+//        temp = new HashMap<>();
+//        temp.put(new Node("A"), 5.0);
+//        temp.put(new Node("B"), 2.0);
+//        temp.put(new Node("D"), 1.0);
+//        matrix.put(new Node("C"), temp);
+//
+//        temp = new HashMap<>();
+//        temp.put(new Node("A"), 5.0);
+//        temp.put(new Node("B"), 2.0);
+//        temp.put(new Node("C"), 1.0);
+//        matrix.put(new Node("D"), temp);
+//
+////        temp = new HashMap<>();
+////        temp.put(new Node("A"), 8.0);
+////        temp.put(new Node("B"), 9.0);
+////        temp.put(new Node("C"), 7.0);
+////        temp.put(new Node("D"), 3.0);
+////        matrix.put(new Node("E"), temp);
+
         HashMap<Node, Double> temp = new HashMap<>();
         temp.put(new Node("B"), 5.0);
-        temp.put(new Node("C"), 9.0);
-        temp.put(new Node("D"), 9.0);
-        temp.put(new Node("E"), 8.0);
+        temp.put(new Node("C"), 4.0);
+        temp.put(new Node("D"), 7.0);
+        temp.put(new Node("E"), 6.0);
+        temp.put(new Node("F"), 8.0);
         matrix.put(new Node("A"), temp);
 
         temp = new HashMap<>();
         temp.put(new Node("A"), 5.0);
-        temp.put(new Node("C"), 10.0);
+        temp.put(new Node("C"), 7.0);
         temp.put(new Node("D"), 10.0);
         temp.put(new Node("E"), 9.0);
+        temp.put(new Node("F"), 11.0);
         matrix.put(new Node("B"), temp);
 
         temp = new HashMap<>();
-        temp.put(new Node("A"), 9.0);
-        temp.put(new Node("B"), 10.0);
-        temp.put(new Node("D"), 8.0);
-        temp.put(new Node("E"), 7.0);
+        temp.put(new Node("A"), 4.0);
+        temp.put(new Node("B"), 7.0);
+        temp.put(new Node("D"), 7.0);
+        temp.put(new Node("E"), 6.0);
+        temp.put(new Node("F"), 8.0);
         matrix.put(new Node("C"), temp);
 
         temp = new HashMap<>();
-        temp.put(new Node("A"), 9.0);
+        temp.put(new Node("A"), 7.0);
         temp.put(new Node("B"), 10.0);
-        temp.put(new Node("C"), 8.0);
-        temp.put(new Node("E"), 3.0);
+        temp.put(new Node("C"), 7.0);
+        temp.put(new Node("E"), 5.0);
+        temp.put(new Node("F"), 9.0);
         matrix.put(new Node("D"), temp);
 
         temp = new HashMap<>();
-        temp.put(new Node("A"), 8.0);
+        temp.put(new Node("A"), 6.0);
         temp.put(new Node("B"), 9.0);
-        temp.put(new Node("C"), 7.0);
-        temp.put(new Node("D"), 3.0);
+        temp.put(new Node("C"), 6.0);
+        temp.put(new Node("D"), 5.0);
+        temp.put(new Node("F"), 8.0);
         matrix.put(new Node("E"), temp);
+
+        temp = new HashMap<>();
+        temp.put(new Node("A"), 8.0);
+        temp.put(new Node("B"), 11.0);
+        temp.put(new Node("C"), 8.0);
+        temp.put(new Node("D"), 9.0);
+        temp.put(new Node("E"), 8.0);
+        matrix.put(new Node("F"), temp);
         Node newLetter = null;
         while (letters.size() > 2) {
             double min = Integer.MAX_VALUE;
@@ -134,8 +178,8 @@ public class NeiborJoining {
         }
         Entry<Node, HashMap<Node, Double>> lastVal = matrix.entrySet().iterator().next();
         Entry<Node, Double> lastVal2 = lastVal.getValue().entrySet().iterator().next();
-        lastVal2.getKey().height = lastVal2.getValue()/2;
-        lastVal.getKey().height = lastVal2.getValue()/2;
+        lastVal2.getKey().height = lastVal2.getValue() / 2;
+        lastVal.getKey().height = lastVal2.getValue() / 2;
         Node root = new Node(lastVal.getKey(), lastVal2.getKey(), 0);
         tree.add(root);
         System.out.println(inOrderNewick(root));
