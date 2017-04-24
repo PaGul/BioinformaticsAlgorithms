@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -20,6 +20,7 @@ public class FBAlignment {
     static double pXY = 0.9;
 
     public static double[][] run(String seq1, String seq2) {
+        System.out.println("sd");
         int n = seq1.length();
         int m = seq2.length();
         double[][] fM = new double[n + 1][m + 1];
